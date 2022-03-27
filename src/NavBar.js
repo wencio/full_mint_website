@@ -18,6 +18,8 @@ const NavBar = ({accounts,setAccounts}) => {
             });
             console.log(accounts[0]);
             setAccounts(accounts);
+        }else {
+            alert('Please connect your Metamask to start minting')
         }
     }
 
@@ -44,16 +46,6 @@ const NavBar = ({accounts,setAccounts}) => {
        
         {/* Right Side- Sections and Connect*/}
         <Flex justify = "space-around" align ="center" width="40%" padding = "30px">
-
-
-         {/* <div class="container">
-                 <div class="topnav">
-                  <a href="#home">About</a>
-                    <a href="#news">Mint</a>
-                     <a href="#contact">Team</a>
-                
-                </div>
-             </div> */}
            <Box  margin="0 15px">
            <a className="topmenu" href="#home">About</a></Box>
             <Spacer/>
