@@ -1,38 +1,112 @@
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P");
+@import url("https://fonts.googleapis.com/css?family=VT323");
+
+
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-family: "Press Start 2P","VT323";
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+*{
+
+  box-sizing:border-box;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+body{
+
+  overflow: hidden;
+}
+
+.overlay{
+
+  opacity: 0.85;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  position: fixed;
+}
+
+.moving-background{
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("./assets/background/parallax-bg.gif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 40% 40%;
+}
+
+
+
+.zoom {
+ /* padding: 50px;*/
+  /*background-color: green;*/
+  transition: transform .2s; /* Animation */
+  width: 42px;
+  height: 42px;
+  margin: 0 15px;
+}
+
+.zoom:hover {
+  transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.flip-box {
+  background-color: transparent;
+  width: 240px;
+  height: 240px;
+ /* border: 1px solid #f1f1f1; */
+  perspective: 240px;
+}
+
+.flip-box-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-box:hover .flip-box-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-box-front, .flip-box-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-box-front {
+ /* background-color: #bbb;*/
+  color: black;
+}
+
+.flip-box-back {
+ /* background-color: dodgerblue; */
+  color: white;
+  transform: rotateY(180deg);
+}
+
+
+.topmenu {
+
+  color: white;
+  text-decoration: none;
+}
+
+
+.topmenu:hover {
+
+  color: #D6517D;
 }
