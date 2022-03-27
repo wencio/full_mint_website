@@ -19,7 +19,7 @@ const NavBar = ({accounts,setAccounts}) => {
             console.log(accounts[0]);
             setAccounts(accounts);
         }else {
-            alert('Please connect your Metamask to start minting')
+            alert('Maria! conecta el Metamask')
         }
     }
 
